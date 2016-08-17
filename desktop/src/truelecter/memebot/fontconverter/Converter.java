@@ -38,7 +38,7 @@ public class Converter {
         // .decode(Converter.class.getProtectionDomain().getCodeSource().getLocation().getPath(),
         // "UTF-8");
         if (args.length > 1) {
-            chars = new String(Files.readAllBytes(new File(currentDir + File.separator + args[1]).toPath()),
+            chars = new String(Files.readAllBytes(new File(args[1]).toPath()),
                     Charset.forName("UTF-8"));
         } else {
             String newLine = System.getProperty("line.separator");
@@ -93,7 +93,7 @@ public class Converter {
 
         fontJson.put("sizes", fontSizes);
 
-        fontJson.write(new FileWriter(currentDir + File.separator + fontname + File.separator + fontname + ".json")).close();;
+        fontJson.write(new FileWriter(currentDir + File.separator + fontname + File.separator + "font.json")).close();;
 
         System.exit(0);
     }
